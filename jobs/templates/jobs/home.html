@@ -167,13 +167,13 @@
       #carousel .carousel-item {
         height: 1.125rem;
         width: 100%;
-        min-height: 450px;
+        min-height: 550px;
         background: no-repeat center center scroll;
         background-size: cover;
       }
 
       #carousel .carousel-item .caption {
-        background-color: rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.3);
         padding: 40px;
         color: white;
         animation-duration: 1s;
@@ -266,6 +266,7 @@
       #navbarSupportedContent ul li a{
           color: Black;
           text-decoration: none;
+          font-weight: 400;
           font-size: 15px;
           display: block;
           padding: 20px 20px;
@@ -302,7 +303,7 @@
           left: 0px;
           transition-duration:0.6s;
           transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          background-color: #A52A2A;
+          background-color: #be0032;
           border-top-left-radius: 15px;
           border-top-right-radius: 15px;
           margin-top: 10px;
@@ -312,7 +313,7 @@
           position: absolute;
           width: 25px;
           height: 25px;
-          background-color: #A52A2A;
+          background-color: #be0032;
           bottom: 10px;
       }
       .hori-selector .right{
@@ -338,9 +339,6 @@
           bottom: 0;
           left: -25px;
       }
-
-
-
 
       @media (max-width: 991px){
           #navbarSupportedContent ul li a{
@@ -386,7 +384,7 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #A52A2A;" id="nav">
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #a32638;" id="nav">
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto nav-flex-icons">
               <li class="nav-item">
@@ -409,9 +407,9 @@
                   <i class="fab fa-linkedin"></i>
                 </a>
               </li>
-              <li class="nav-item">
+              <!--<li class="nav-item">
                 <a class="nav-link waves-effect waves-light" href="{% url 'allblogs' %}">Blog</a>
-              </li>
+              </li>-->
               <li class="nav-item">
                 <form action="#">
                   <input type="search" placeholder="Search">
@@ -430,11 +428,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><i class="fas fa-home"></i>Dashboard</a>
-              </li>
               <li class="nav-item active">
-                <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>Address Book</a>
+                <a class="nav-link" href="{% url 'home' %}"><i class="fas fa-home"></i>Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'allblogs' %}"><i class="far fa-address-book"></i>Address Book</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>Components</a>
