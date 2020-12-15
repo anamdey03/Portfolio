@@ -374,17 +374,19 @@
           }
       }
 
+      @media screen and (min-width: 0px) and (max-width: 1000px) {
+        #navbarNav {
+          display: flex;
+        }
+      }
+
     </style>
 
   </head>
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #A52A2A;">
-          <a class="navbar-brand" href="{% url 'home' %}">Forever My Wanderlust</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #A52A2A;" id="nav">
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto nav-flex-icons">
               <li class="nav-item">
@@ -421,7 +423,7 @@
       </nav>
 
       <nav class="navbar navbar-expand-lg navbar-mainbg">
-        <a class="navbar-brand navbar-logo" href="#">Navbar</a>
+        <a class="navbar-brand navbar-logo" href="{% url 'home' %}">Forever My Wanderlust</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars text-black"></i>
         </button>
