@@ -570,12 +570,42 @@
           }
       }
 
+      .navigation-bar {
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 1000;
+      }
+      .navigation-bar.is-hidden {
+        opacity: 0;
+        -webkit-transform: translate(0, -60px);
+        -webkit-transition: -webkit-transform .2s,background .3s,color .3s,opacity 0 .3s;
+      }
+      .navigation-bar.is-visible {
+        opacity: 1;
+        -webkit-transform: translate(0, 0);
+        -webkit-transition: -webkit-transform .2s,background .3s,color .3s;
+      }
+      .navigation-bar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .navigation-bar ul li {
+        display: inline-block;
+      }
+
+      main{
+        margin-top: 118px;
+      }
+
     </style>
 
   </head>
   <body>
 
-    <header>
+    <header class="navigation-bar is-visible" data-nav-status="toggle">
       <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #a32638;" id="nav">
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -641,6 +671,58 @@
           </ul>
         </div>
       </nav>
+      
+      <script>
+        $(document).ready(function(){
+
+        /** ===========================================
+            Hide / show the master navigation menu
+        ============================================ */
+
+          // console.log('Window Height is: ' + $(window).height());
+          // console.log('Document Height is: ' + $(document).height());
+
+            console.log('Window Height is: ' + $(window).height());
+          console.log('Document Height is: ' + $(document).height());
+
+          var previousScroll = 0;
+
+          $(window).scroll(function(){
+
+            var currentScroll = $(this).scrollTop();
+
+            /*
+              If the current scroll position is greater than 0 (the top) AND the current scroll position is less than the document height minus the window height (the bottom) run the navigation if/else statement.
+            */
+            if (currentScroll > 0 && currentScroll < $(document).height() - $(window).height()){
+              /*
+                If the current scroll is greater than the previous scroll (i.e we're scrolling down the page), hide the nav.
+              */
+              if (currentScroll > previousScroll){
+                window.setTimeout(hideNav, 300);
+              /*
+                Else we are scrolling up (i.e the previous scroll is greater than the current scroll), so show the nav.
+              */
+              } else {
+                window.setTimeout(showNav, 300);
+              }
+              /*
+                Set the previous scroll value equal to the current scroll.
+              */
+              previousScroll = currentScroll;
+            }
+
+          });
+
+          function hideNav() {
+            $("[data-nav-status='toggle']").removeClass("is-visible").addClass("is-hidden");
+          }
+          function showNav() {
+            $("[data-nav-status='toggle']").removeClass("is-hidden").addClass("is-visible");
+          }
+
+        });
+      </script>
 
       <script>
         // ---------Responsive-navbar-active-animation-----------
