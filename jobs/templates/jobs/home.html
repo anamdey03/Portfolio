@@ -833,6 +833,11 @@
                   <i class="fab fa-linkedin"></i>
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect waves-light" href="mailto:sagarikapaul6@gmail.com" title="Follow on LinkedIn">
+                  <i class="fab fa-google"></i>
+                </a>
+              </li>
               <!--<li class="nav-item">
                 <a class="nav-link waves-effect waves-light" href="{% url 'allblogs' %}">Blog</a>
               </li>-->
@@ -1103,79 +1108,65 @@
         });
       </script>
 
-      <!--<div class="container">
-  <div class="row">
-    <div class="col-md-5 text-center animated wow fadeInLeft col-md-push-7" style="padding: 100px 0px 100px 100px;">
-  <div class="iphone1">
-    <img src="http://placehold.it/150x150" alt="" titl="">
-  </div>
-</div>
+      <div style="background-color: #EDEDE8; margin-bottom: -10px; padding-top: 20px; padding-left: 30px;">
+        <h1 style="color: #ae3c4e; font-family: Georgia, serif; font-size: 25px;">Recent Posts</h1>
+      </div>
 
-<div class="col-md-7 animated wow fadeInRight col-md-pull-5">
-  <div class="features_list1">
-    <h1 class="text-uppercase">Text on Left</h1>
-    <p>Some text</p>
-  </div>
-    </div>
-  </div>
-</div>-->
+      <section style="background-color: #EDEDE8;">
+        <main class="page-content">
+          <div class="card animatable fadeInDown">
+            <div class="content">
+              <h2 class="title">Mountain View</h2>
+              <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+              <button class="button">View Trips</button>
+            </div>
+          </div>
+          <div class="card animatable fadeInUp">
+            <div class="content">
+              <h2 class="title">To The Beach</h2>
+              <p class="copy">Plan your next beach trip with these fabulous destinations</p>
+              <button class="button">View Trips</button>
+            </div>
+          </div>
+          <div class="card animatable fadeInDown">
+            <div class="content">
+              <h2 class="title">Desert Destinations</h2>
+              <p class="copy">It's the desert you've always dreamed of</p>
+              <button class="button">Book Now</button>
+            </div>
+          </div>
+          <div class="card animatable fadeInUp">
+            <div class="content">
+              <h2 class="title">Explore The Galaxy</h2>
+              <p class="copy">Seriously, straight up, just blast off into outer space today</p>
+              <button class="button">Book Now</button>
+            </div>
+          </div>
+        </main>
+      </section>
+      <div style="background-color: #EDEDE8; padding: 25px;"></div>
 
+      <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+      <script>
+          // ===== Scroll to Top ====
+          $(window).scroll(function() {
+              if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+                  $('#return-to-top').fadeIn(200);    // Fade in the arrow
+              } else {
+                  $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+              }
+          });
+          $('#return-to-top').click(function() {      // When arrow is clicked
+              $('body,html').animate({
+                  scrollTop : 0                       // Scroll to top of body
+              }, 500);
+          });
+      </script>
+
+      <div>
+        <h4 style="text-align:center; padding-top:30px; font-family: Georgia, serif; color: #3E3D37;"><img src="{% static 'Instagram.png' %}" style="margin-top: -6px; padding-right:5px;">Sagarika Paul</h4>
+      </div>
     </main>
-
-    <div style="background-color: #EDEDE8; margin-bottom: -10px; padding-top: 20px; padding-left: 30px;">
-      <h1 style="color: #ae3c4e; font-family: Georgia, serif; font-size: 25px;">Recent Posts</h1>
-    </div>
-
-    <section style="background-color: #EDEDE8;">
-      <main class="page-content">
-        <div class="card animatable fadeInDown">
-          <div class="content">
-            <h2 class="title">Mountain View</h2>
-            <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-            <button class="button">View Trips</button>
-          </div>
-        </div>
-        <div class="card animatable fadeInUp">
-          <div class="content">
-            <h2 class="title">To The Beach</h2>
-            <p class="copy">Plan your next beach trip with these fabulous destinations</p>
-            <button class="button">View Trips</button>
-          </div>
-        </div>
-        <div class="card animatable fadeInDown">
-          <div class="content">
-            <h2 class="title">Desert Destinations</h2>
-            <p class="copy">It's the desert you've always dreamed of</p>
-            <button class="button">Book Now</button>
-          </div>
-        </div>
-        <div class="card animatable fadeInUp">
-          <div class="content">
-            <h2 class="title">Explore The Galaxy</h2>
-            <p class="copy">Seriously, straight up, just blast off into outer space today</p>
-            <button class="button">Book Now</button>
-          </div>
-        </div>
-      </main>
-    </section>
-    <div style="background-color: #EDEDE8; padding: 20px;"></div>
-
-    <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
-    <script>
-        // ===== Scroll to Top ====
-        $(window).scroll(function() {
-            if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
-                $('#return-to-top').fadeIn(200);    // Fade in the arrow
-            } else {
-                $('#return-to-top').fadeOut(200);   // Else fade out the arrow
-            }
-        });
-        $('#return-to-top').click(function() {      // When arrow is clicked
-            $('body,html').animate({
-                scrollTop : 0                       // Scroll to top of body
-            }, 500);
-        });
-    </script>
 
     <footer class="text-muted py-2 " style="background-color: #32312C">
       <div class="container text-center">
