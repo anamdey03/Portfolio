@@ -1,6 +1,7 @@
 
 <!doctype html>
 <html lang="en">
+{% extends 'base_home.html' %}
   <head>
     {% load static %}
     <meta charset="utf-8">
@@ -42,79 +43,7 @@
 
   </head>
   <body>
-    <header class="navigation-bar is-visible" data-nav-status="toggle">
-      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #a32638;" id="nav">
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto nav-flex-icons">
-              <li class="nav-item">
-                <a class="nav-link waves-effect waves-light" href="https://twitter.com/SagarikaPaul18" title="Follow on Twitter">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link waves-effect waves-light" href="https://www.facebook.com/sagarika.paul.73" title="Follow on Facebook">
-                  <i class="fab fa-facebook"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link waves-effect waves-light" href="https://www.instagram.com/sagarika_paul94" title="Follow on Instagram">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link waves-effect waves-light" href="https://www.linkedin.com/in/sagarika-paul-12a174b0" title="Follow on LinkedIn">
-                  <i class="fab fa-linkedin"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link waves-effect waves-light" href="mailto:sagarikapaul6@gmail.com" title="Mail Me">
-                  <i class="fab fa-google"></i>
-                </a>
-              </li>
-              <!--<li class="nav-item">
-                <a class="nav-link waves-effect waves-light" href="{% url 'allblogs' %}">Blog</a>
-              </li>-->
-              <li class="nav-item">
-                <form action="#">
-                  <input type="search" placeholder="Search">
-                  <i class="fa fa-search"></i>
-                </form>
-              </li>
-            </ul>
-          </div>
-      </nav>
-
-      <nav class="navbar navbar-expand-lg navbar-mainbg">
-        <a class="navbar-brand navbar-logo" href="{% url 'home' %}">Forever My Wanderlust</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars text-black"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home' %}"><i class="fas fa-home"></i>Dashboard</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'allblogs' %}"><i class="far fa-address-book"></i>Address Book</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>Components</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Calendar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Charts</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>
-              </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
+  {% block content %}
     <main>
       <div id="carousel" class="carousel slide carousel-fade z-depth" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -268,17 +197,7 @@
               }, 500);
           });
       </script>
-
-      <div>
-        <h4 style="text-align:center; padding-top:30px; font-family: Georgia, serif; color: #3E3D37;"><img src="{% static 'Instagram.png' %}" style="margin-top: -6px; padding-right:5px;">Sagarika Paul</h4>
-      </div>
     </main>
-
-    <footer class="text-muted py-2 " style="background-color: #32312C">
-      <div class="container text-center">
-        <p style="color:White;">Copyright {% now "Y" %} © <strong>ForeverMyWanderlust.</strong> All rights reserved.</p>
-      </div>
-    </footer>
-
+  {% endblock %}
   </body>
 </html>
