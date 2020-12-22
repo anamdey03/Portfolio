@@ -9,3 +9,7 @@ def home(request):
         'jobs': jobs
     }
     return render(request, 'jobs/home.html', context)
+
+
+def about(request):
+    return render(request, 'jobs/about.html', {})
