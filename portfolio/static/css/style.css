@@ -12,7 +12,7 @@
 	}
 }
 
-form {
+.search {
 	position: relative;
 	top: 50%;
 	left: 50%;
@@ -27,7 +27,7 @@ form {
 	padding: 5px;
 }
 
-input {
+.search input {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -57,16 +57,16 @@ input {
 	transition: all 1s;
 }
 
-form:hover {
+.search:hover {
 	width: 200px;
 	cursor: pointer;
 }
 
-form:hover input {
+.search:hover input {
 	display: block;
 }
 
-form:hover .fa {
+.search:hover .fa {
 	background: #07051a;
 	color: white;
 }
@@ -786,7 +786,7 @@ main {
 	}
 }
 
-.top {
+.about-top {
     width: 100%;
     height: auto;
 }
@@ -840,4 +840,31 @@ main {
     .div-right {
         padding-top:380px;
     }
+}
+
+.contact-top {
+    width: 100%;
+    height: auto;
+}
+
+.body-head {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.body-sec {
+    text-align: center;
+    font-size: 15px;
+}
+
+.details {
+    color: grey;
+}
+
+.contact-us {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 }
