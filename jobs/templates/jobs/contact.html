@@ -50,14 +50,23 @@
 
         <div>
             <div class="body-head">
-                <p class="details">Thank you for visiting!</p>
+                <center>
+                    <p class="details">Thank you for visiting!</p>
+                </center>
             </div>
             <div class="body-sec">
                 <p class="details">For questions about a specific page or post, please use the comments section. For any other question, you can use the form below to send me a message, I’ll reply as soon as possible.</p>
             </div>
         </div>
 
-        <div class="contact-us">
+        {% if name %}
+            <br>
+            <center>
+                <h2>Thanks {{ name }}!</h2>
+                <p>Received your comments and will respond shortly..</p>
+            </center>
+        {% else %}
+        <div class="contact-us animatable fadeInUp">
             <section>
               <div class="contact">
                 <div class="row">
@@ -67,7 +76,7 @@
                         <div>
                            <p class="outer-text">Contact</p>
                         </div>
-                        <form method="post" data-form-title="CONTACT US">
+                        <form method="post" action="{% url 'contact' %}" data-form-title="CONTACT US"> {% csrf_token %}
                           <input type="hidden" data-form-email="true">
                           <div class="form-group">
                             <input type="text" class="form-control" name="name" required="" placeholder="Name*" data-form-field="Name">
@@ -92,6 +101,7 @@
               </div>
             </section>
         </div>
+        {% endif %}
 
         <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
         <script>
