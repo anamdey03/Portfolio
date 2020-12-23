@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Job
 from django.core.mail import send_mail
 from portfolio.settings import EMAIL_HOST_USER
+from .forms import ContactModelForm
 
 
 # Create your views here.
@@ -21,8 +22,11 @@ def contact(request):
     if request.method == "POST":
         name = request.POST['name']
         email = request.POST['email']
-        phone_number = request.POST['phone']
         comments = request.POST['comments']
+
+        form = ContactModelForm(request.POST)
+        if form.is_valid():
+            form.save()
 
         send_mail(
             'Comments from ' + name + ' for ForeverMyWanderlust',
