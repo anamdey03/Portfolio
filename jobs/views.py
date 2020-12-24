@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Job
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
 from portfolio.settings import EMAIL_HOST_USER
 from .forms import ContactModelForm
 
@@ -22,18 +22,24 @@ def contact(request):
     if request.method == "POST":
         name = request.POST['name']
         email = request.POST['email']
+        phone = request.POST['phone']
         comments = request.POST['comments']
 
         form = ContactModelForm(request.POST)
         if form.is_valid():
             form.save()
 
-        send_mail(
+        email = EmailMessage(
             'Comments from ' + name + ' for ForeverMyWanderlust',
-            comments,
+            comments + '\n\nThanks & Regards, \n' + name + '\n' + phone,
             EMAIL_HOST_USER,
-            ['anamitradey.ece@gmail.com', 'sagarikapaul6@gmail.com', email]
+            ['sagarikapaul6@gmail.com'],
+            cc=[email],
+            bcc=['anamitradey.ece@gmail.com'],
+            reply_to=[email],
         )
+
+        email.send(fail_silently=True)
 
         context = {
             'name': name

@@ -11,5 +11,5 @@ class Contact(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     phone = models.CharField(max_length=12)
-    comments = models.CharField(max_length=500)
+    comments = models.TextField()
 
